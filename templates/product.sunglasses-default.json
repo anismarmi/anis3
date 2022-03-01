@@ -1,0 +1,305 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product--sunglasses",
+      "blocks": {
+        "bb6ee375-e4ea-4a60-a2ac-b9dfe1912c2d": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "52350518-c1bb-4479-a636-0f4d8e86c18f": {
+          "type": "available_in_rx",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": true,
+            "enable_frame_lens_titles": true
+          }
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "globe",
+            "text": "Free worldwide shipping"
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Features",
+            "content": "<p>{{ product.metafields.my_fields.pdp_features | metafield_tag }}<\/p>",
+            "page": ""
+          }
+        },
+        "8abe9128-a1a3-4606-916f-ffbf0ed352d8": {
+          "type": "tab",
+          "settings": {
+            "title": "Sizing",
+            "content": "<p>{{ product.metafields.my_fields.pdp_sizing | metafield_tag }}<\/p>",
+            "page": ""
+          }
+        },
+        "d516e3de-a8a3-4af0-b6fb-be468ff8646d": {
+          "type": "tab",
+          "settings": {
+            "title": "What's in the box",
+            "content": "<p>{{ product.metafields.my_fields.pdp_what_s_in_the_box | metafield_tag }}<\/p>",
+            "page": ""
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "bb6ee375-e4ea-4a60-a2ac-b9dfe1912c2d",
+        "52350518-c1bb-4479-a636-0f4d8e86c18f",
+        "price",
+        "separator",
+        "variant_picker",
+        "sales_point",
+        "inventory_status",
+        "buy_buttons",
+        "description",
+        "tab",
+        "8abe9128-a1a3-4606-916f-ffbf0ed352d8",
+        "d516e3de-a8a3-4af0-b6fb-be468ff8646d",
+        "contact",
+        "share"
+      ],
+      "settings": {
+        "sku_enable": true,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "color_option_heading_replacement": "Model",
+        "ct-scroll-product-cta": true
+      }
+    },
+    "164581117177719ddf": {
+      "type": "ct--hero-video",
+      "settings": {
+        "text_align": "vertical-center horizontal-right",
+        "video_url": "https:\/\/vimeo.com\/383469319",
+        "overlay_opacity": 0,
+        "onload_function_postfix": 3,
+        "ct_title": "Bumpers",
+        "ct_body": "The Cutline proprietary removable bumpers enhance riders security by preventing contact or hurts between lens and face. Cutline features 4 different bumpers configurations to meet the riders demands: the fully loaded 4 bumpers option, the 2 lower and upper ones or the possibility to wear the sunglasses without bumpers. Cutline bumpers, enhancers, nosepads and temple tips are easily interchangeable offering multiple options to customize your eyewear."
+      }
+    },
+    "1645807599f4f93c0d": {
+      "type": "ct--hero-video",
+      "settings": {
+        "text_align": "vertical-center horizontal-right",
+        "video_url": "https:\/\/vimeo.com\/383469605",
+        "overlay_opacity": 10,
+        "onload_function_postfix": 1,
+        "ct_title": "Quick Change System",
+        "ct_body": "Changing your eyewear lens has never been faster. Featuring the most intuitive interchangeable lens system ever, Cutline lets you swap lenses without hassle. Simple pressure on the two side buttons release the temple from the lens. It’s that easy."
+      }
+    },
+    "16458034362fbb8f30": {
+      "type": "ct--hero-video",
+      "settings": {
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https:\/\/vimeo.com\/390947054",
+        "overlay_opacity": 0,
+        "onload_function_postfix": 2,
+        "ct_title": "",
+        "ct_body": ""
+      }
+    },
+    "16457506707ec82b28": {
+      "type": "ct--large-image-with-text",
+      "settings": {
+        "subtitle": "",
+        "title": "Wind Shield Lens",
+        "text": "<p>The Cutline wraparound rimless shield lens is designed to ensure superior eye protection all while expanding your field of vision. The shape of the lens delivers maximum visibility in riding position and protects your eyes from wind, dust and atmospheric elements<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/Cutline_Wind_Sheild_Lens.jpg",
+        "focal_point": "center",
+        "layout": "left",
+        "height": 550,
+        "framed": false,
+        "parallax": false
+      }
+    },
+    "1645751090c9a6000d": {
+      "type": "ct--large-image-with-text",
+      "settings": {
+        "subtitle": "",
+        "title": "ADJUSTABLE NOSEPAD AND TEMPLE TIPS",
+        "text": "<p>The soft adjustable nosepad offers an exceptional fit for any shape of face. This system also allows to adjust the glasses’ height and their distance from the face to prevent misting. Adjustable temple tips ensure fully-customised fit and a perfect grip. Simply apply a gentle pressure to adjust these terminals in any direction<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/Cutline_-_adjustable_temple.jpg",
+        "focal_point": "center",
+        "layout": "left",
+        "height": 550,
+        "framed": false,
+        "parallax": false
+      }
+    },
+    "1645751288e25de49d": {
+      "type": "ct--large-image-with-text",
+      "settings": {
+        "subtitle": "",
+        "title": "ENHANCED VENTILATION",
+        "text": "<p>To accelerate heat evaporation, Cutline features the Rudy Project proprietary Power Flow System. The combined action of the 4 vents on the lens with the ones placed on temples and bumpers enhances air circulation to avoid the risk of fogging during the activity.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/Enhanced_Ventallation.jpg",
+        "focal_point": "center",
+        "layout": "left",
+        "height": 550,
+        "framed": false,
+        "parallax": false
+      }
+    },
+    "1645751304a5692df2": {
+      "type": "ct--large-image-with-text",
+      "settings": {
+        "subtitle": "",
+        "title": "RX Able",
+        "text": "<p>Cutline supports the RX Optical Insert for sportsmen with correction needs who want to benefit from the Cutline comfort and eye protection<\/p>",
+        "button_label": "Shop Cutline RX",
+        "button_link": "shopify:\/\/products\/cutline-rx",
+        "image": "shopify:\/\/shop_images\/Cutline_RX_Able.jpg",
+        "focal_point": "center",
+        "layout": "left",
+        "height": 550,
+        "framed": false,
+        "parallax": false
+      }
+    },
+    "ct-compatible-products": {
+      "type": "ct-compatible-products",
+      "settings": {}
+    },
+    "16457521640372ad13": {
+      "type": "apps",
+      "blocks": {
+        "d886f93b-af26-4ef5-a7bd-c75806e74db4": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "d886f93b-af26-4ef5-a7bd-c75806e74db4"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like",
+        "related_count": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "recent_count": 5
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "16457483802d73dfb4": {
+      "type": "featured-video",
+      "disabled": true,
+      "settings": {
+        "title": "Meet Cutline",
+        "video_url": "https:\/\/youtu.be\/jb71yqdpOWQ",
+        "divider": true
+      }
+    },
+    "164609035996ee9842": {
+      "type": "ct-tech-specs",
+      "settings": {
+        "title": "Collection list",
+        "divider": false,
+        "per_row": 4,
+        "enable_gutter": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164581117177719ddf",
+    "1645807599f4f93c0d",
+    "16458034362fbb8f30",
+    "16457506707ec82b28",
+    "1645751090c9a6000d",
+    "1645751288e25de49d",
+    "1645751304a5692df2",
+    "ct-compatible-products",
+    "16457521640372ad13",
+    "product-recommendations",
+    "recently-viewed",
+    "collection-return",
+    "sub",
+    "16457483802d73dfb4",
+    "164609035996ee9842"
+  ]
+}

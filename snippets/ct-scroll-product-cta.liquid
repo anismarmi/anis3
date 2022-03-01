@@ -1,0 +1,242 @@
+<script type="text/javascript">
+  //window.onscroll = checkPositionSetHeader;
+  document.addEventListener('scroll', checkPositionSetHeader);
+
+  function checkPositionSetHeader(){
+    //var user_position = window.pageYOffset;
+    var section_block = document.querySelector("div[data-section-id='{{ section_id }}']");
+    var section_block_bottom = section_block.getBoundingClientRect().bottom;
+    var ct_header = document.getElementById('ctPdpHeader');
+    //console.log(user_position);
+    //console.log(section_block_bottom);
+
+    if( section_block_bottom < 0 ){
+      ct_header.classList.add('ct-visible');
+      ct_header.classList.remove('ct-hide');
+    } else {
+      ct_header.classList.add('ct-hide');
+      ct_header.classList.remove('ct-visible');
+    }
+  }
+
+  function scrollToCta(){
+    //console.log('scrolled');
+    let prod_form = document.querySelector(".product-block[ct_product_form=\"true\"]");
+    var prod_form_y = prod_form.getClientRects()[0].height;
+    //console.log(prod_form_y);
+    window.scrollTo({
+      top: prod_form_y,
+      left:0,
+      behavior: 'smooth'}
+    );
+  }
+</script>
+
+<style>
+  #ctPdpHeader .ct-mobile-title, #ctPdpHeader .ct-zippay-mobile{
+    display:none;
+  }
+  #ctPdpHeader .ct-zippay-mobile{
+    font-size: .8em;
+  }
+  #ctPdpHeader .ct-zippay-desktop{
+    display:block;
+  }
+  /*hiding the sticky header from PDP's with this option checked*/
+  .site-header.site-header--stuck.site-header--opening {
+    display: none;
+  }
+  .ct-pdp-header {
+    position: fixed;
+    top: 0;
+    z-index: 28;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0px;
+    box-shadow: 0 0 1px rgb(0 0 0 / 20%);
+  }
+  .ct-pdp-header.ct-hide{
+    height: 0px;
+    padding:0px;
+    transform:translateY(-69.75px);
+    overflow:hidden;
+    -moz-animation: slide-out 1s ease;
+    -webkit-animation: slide-out 1s ease;
+    animation: slide-out 1s ease;
+  }
+  .ct-pdp-header.ct-visible{
+    height: auto;
+    padding: 10px 0px;
+    transform:translateY(0px);
+    -moz-animation: slide 1s ease;
+    -webkit-animation: slide 1s ease;
+    animation: slide 1s ease;
+  }
+  @-moz-keyframes slide {
+    from{
+      height: 0;
+      padding: 0px 0px;
+      transform: translate(0px, -69.75px) rotateZ(0.001deg);
+    }
+    to{
+      height: 69.75px;
+      padding: 10px 0px;
+      transform: translate(0px, 0px) rotateZ(0.001deg);;
+    }
+  }
+  @-webkit-keyframes slide {
+    from{
+      height: 0;
+      padding: 0px 0px;
+      transform: translate(0px, -69.75px) rotateZ(0.001deg);
+    }
+    to{
+      height: 69.75px;
+      padding: 10px 0px;
+      transform: translate(0px, 0px) rotateZ(0.001deg);;
+    }
+  }
+  @-moz-keyframes slide-out {
+    from{
+      height: 0;
+      padding: 0px 0px;
+      transform: translate(0px, 0px) rotateZ(0.001deg);
+    }
+    to{
+      height: 69.75px;
+      padding: 10px 0px;
+      transform: translate(0px, -69.75px) rotateZ(0.001deg);;
+    }
+  }
+  @-webkit-keyframes slide-out {
+    from{
+      height: 69.75px;
+      padding: 10px 0px;
+      transform: translate(0px, 0px) rotateZ(0.001deg);
+    }
+    to{
+      height: 0;
+      padding: 0px 0px;
+      transform: translate(0px, -69.75px) rotateZ(0.001deg);;
+    }
+  }
+  .ct-left-content{
+    display:block;
+    float:left;
+    margin: 5px 0px;
+  }
+  .ct-left-content h3, .ct-right-content h3{
+    font-size: .85em;
+    margin-bottom: 3px;
+  }
+  .ct-left-content p, .ct-right-content p{
+    float:left;
+    font-size: .9em;
+    margin-bottom: 3px;
+  }
+  .ct-right-content{
+    display:flex;
+    float:right;
+  }
+  .ct-right-center{
+    padding-right: 15px;
+  }
+  .ct-header-wrapper div.product-block.product-block--price{
+    margin-bottom:3px;
+  }
+  .ct-header-wrapper span.product__price.product__price--compare, .ct-header-wrapper span.product__price.on-sale{
+    text-transform:uppercase;
+    font-weight: 700;
+    font-size: 13.6px;
+    line-height: 13.6px;
+    font-family: var(--typeHeaderPrimary),var(--typeHeaderFallback);
+  }
+  @media only screen and (min-width: 10px) and (max-width: 650px){
+    #ctPdpHeader .ct-left-content, #ctPdpHeader .ct-zippay-desktop{
+      display:none;
+    }
+    #ctPdpHeader .ct-zippay-mobile{
+      display:block;
+    }
+    #ctPdpHeader .ct-mobile-title{
+      display:block;
+      float:left;
+    }
+    #ctPdpHeader .ct-right-content{
+      float: unset;
+    }
+  }
+</style>
+
+<header id="ctPdpHeader" class="ct-pdp-header ct-hide">
+  <div class="page-width">
+    <div class="ct-header-wrapper">
+      <div class="ct-left-content">
+        <h3>{{ product.title }}</h3>
+        <p class="ct-inventory_notice">In stock, ready to ship</p>
+      </div>
+      <div class="ct-right-content">
+        <div class="ct-right-center">
+          <div class="product-block product-block--price">
+            {%- assign hide_sale_price = true -%}
+            {%- if product.compare_at_price_max > product.price -%}
+              {%- if current_variant.compare_at_price > current_variant.price -%}
+                {%- assign hide_sale_price = false -%}
+              {%- endif -%}
+              <span
+                data-a11y-price
+                class="visually-hidden"
+                aria-hidden="{{ hide_sale_price }}">
+                  {{ 'products.general.regular_price' | t }}
+              </span>
+              <span data-product-price-wrap class="{% if hide_sale_price %} hide{% endif %}">
+                <span data-compare-price class="product__price product__price--compare">
+                  {%- if current_variant.compare_at_price > current_variant.price -%}
+                    {{ current_variant.compare_at_price | money }}
+                  {%- endif -%}
+                </span>
+              </span>
+              <span data-compare-price-a11y class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+            {%- else -%}
+              <span data-a11y-price class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+            {%- endif -%}
+            
+            <span data-product-price
+              class="product__price ct-product__price{% if current_variant.compare_at_price > current_variant.price %} on-sale{% endif %}">
+              <span class="ct-mobile-title">{{ product.title }} -  </span>
+              {%- unless product.empty? -%}
+                {{ current_variant.price | money }}
+              {%- else -%}
+                {{ 1999 | money }}
+              {%- endunless -%}
+            </span>
+
+            <div
+              data-unit-price-wrapper
+              class="product__unit-price product__unit-price--spacing {% unless current_variant.unit_price_measurement %} hide{% endunless %}">
+              {%- capture unit_price_base_unit -%}
+                <span data-unit-base>
+                  {%- if current_variant.unit_price_measurement -%}
+                    {%- if current_variant.unit_price_measurement.reference_value != 1 -%}
+                      {{ current_variant.unit_price_measurement.reference_value }}
+                    {%- endif -%}
+                    {{ current_variant.unit_price_measurement.reference_unit }}
+                  {%- endif -%}
+                </span>
+              {%- endcapture -%}
+
+              <span data-unit-price>{{ current_variant.unit_price | money }}</span>/{{ unit_price_base_unit }}
+            </div>
+          </div>
+          <p class="ct-zippay-desktop">or four interest free payments of <span class="ct-zippay_price">{{ current_variant.price | divided_by: 4 | money }}</span> with Zip Pay</p>
+          <p class="ct-zippay-mobile">or 4 payments of <span class="ct-zippay_price">{{ current_variant.price | divided_by: 4 | money }}</span> w/ Zip</p>
+        </div>
+        <div class="ct-right-right">
+        <div class="hero__link">
+          <a onclick="scrollToCta()" class="btn">Shop now</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

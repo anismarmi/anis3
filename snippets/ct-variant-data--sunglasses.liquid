@@ -1,0 +1,19 @@
+<script id="ct-data" type="application/json">
+{
+	"product_id": {{ product.id }},
+	"selected_or_first_available_id": {{ current_variant.id }},
+	"product_template": "{{ product.template_suffix }}",
+	"variant_metafields": [
+    	{% for variant in product.variants %}
+        {
+        	  "variant_id": {{ variant.id }},
+            "sunglass_frame_name": "{{ variant.metafields.my_fields.sunglass_frame_name.value }}",
+            "sunglass_lenses_name": "{{ variant.metafields.my_fields.sunglass_lenses_name.value }}",
+            "sunglass_bumper_name": "{{ variant.metafields.my_fields.sunglass_bumpers_name.value }}"{% unless variant.metafields.my_fields.lens_light_transmission_low == null %},
+						"lens_light_transmission_low": {{ variant.metafields.my_fields.lens_light_transmission_low.value }}{% endunless %}{% unless variant.metafields.my_fields.lens_light_transmission_high.value == null %},
+						"lens_light_transmission_high": {{ variant.metafields.my_fields.lens_light_transmission_high.value }}{% endunless %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ]
+}
+</script>

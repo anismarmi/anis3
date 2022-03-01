@@ -1,0 +1,35 @@
+{% comment %}
+Need to build logic up top to see if you need to display the HTML at all. If not, then loose it.
+If there
+{% endcomment %}
+{% assign compatible_product_handles = product.metafields.my_fields.compatible_products_csv_.value %}
+
+{% unless compatible_product_handles == null %}
+{% assign handles = compatible_product_handles | split: "," %}
+
+<hr class="hr--large">
+<div class="page-width">
+  <header class="section-header">
+    <h3>Compatible Products</h3>
+  </header>
+</div>
+  <div class="page-width page-width--flush-small">
+    <div class="grid-overflow-wrapper">
+      <div class="grid grid--uniform" data-aos="overflow__animation">
+        {% for handle in handles %}
+        {% assign stripped_handle = handle | strip %}
+        {% assign product = all_products[stripped_handle] %}
+        {% unless product == empty %}
+          {%- render 'product-grid-item',
+            product: product,
+            per_row: 5,
+            quick_shop_enable: settings.quick_shop_enable
+          -%}
+        {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endunless %}

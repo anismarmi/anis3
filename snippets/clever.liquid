@@ -1,0 +1,307 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://unpkg.com/flickity@2.3.0/dist/flickity.pkgd.min.js"></script>
+<script id = "cleverscript">
+  
+    var cleveroptionindex = '';
+    var cleverimages = {{product.metafields.clever["cleverimages"] | json}};
+    // var cleveroptionindex = {{product.metafields.clever["cleveroptionindex"]}};
+    {% if product.metafields.clever["cleveroptionindex"] != blank %}
+    var cleveroptionindex = {{product.metafields.clever["cleveroptionindex"]}};
+    {% endif %}
+    var cleverproduct = {{product | json}};
+    var clevervariants = cleverproduct.variants;
+    var productimageswitcher =  {{product.metafields.clever['is_clever_on'] | json}};
+    var appimageswitcher = {{shop.metafields.clever['is_image_switcher_on'] | json}};
+
+    var imagesjson = {{product.images | json}};
+    var cleverproductimages = [];
+    var productid = {{product.id}};
+
+
+
+    {% assign i = 0 %}
+    {% for image in product.images %}
+    cleverproductimages[{{i}}] = [];
+    cleverproductimages[{{i}}]['src'] = imagesjson[{{i}}];
+    cleverproductimages[{{i}}]['id'] = {{image.id}};
+    {% assign i = i | plus:1 %}
+    {% endfor %}
+    
+    
+
+    if(cleverimages == null){
+
+        cleverimages=0;
+    }
+
+    if(cleveroptionindex == ''){
+
+        cleveroptionindex = 0;
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {    
+
+        if( appimageswitcher==1 && productimageswitcher == 1 ) {
+        	
+          	setTimeout(function() {
+                var isMobile = /iPhone|iPod|Android/i.test(navigator.userAgent);
+                var carousel = document.querySelector('.product-slideshow');
+                var flkty = Flickity.data( carousel );
+                var flktyOption = flkty.options;
+                var slides = $('.product-main-slide').clone().removeAttr('style').removeAttr('aria-hidden');
+                var newflkty;
+                var thumb = $('.product__thumb-item').clone().removeAttr('style');
+
+
+                $(document).on("click", ".swatch-selector", function() {
+                    cleverMapper();
+
+                });
+
+                $(document).on("change", ".variant-input-wrap:eq("+cleveroptionindex+")", function() {
+
+                    cleverMapper();
+
+                });
+
+                $(document).on("click", ".pswp__button--close", function() {
+
+                    setTimeout(function() {
+
+                        $('.pswp').hide();
+
+                    },  500);
+                });
+
+
+                $(document).on("click", ".product-main-slide", function() {
+
+                    $('.pswp').show();
+ 
+                    var pswpElement = document.querySelectorAll('.pswp')[0];
+                    var item = [];
+                    var items = {};
+
+                    $('.photoswipe__image').each(function(){
+
+                        items = {
+                            src: $(this).data('photoswipe-src'),
+                            w: $(this).data('photoswipe-width'),
+                            h: $(this).data('photoswipe-height'),
+                            initialZoomLevel: 0.5
+                        };
+
+                        item.push(items);
+
+                    });
+
+
+                    var index = $('.product-main-slide.is-selected').index();
+
+
+                    var options = {
+                        allowPanToNext: false,
+                        captionEl: false,
+                        closeOnScroll: false,
+                        counterEl: false,
+                        history: false,
+                        index: index - 1,
+                        pinchToClose: false,
+                        preloaderEl: false,
+                        scaleMode: 'zoom',
+                        shareEl: false,
+                        tapToToggleControls: false,
+
+
+                    }
+
+
+                    this.gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, item, options);
+                    this.gallery.init();
+
+
+
+                });    
+
+                $(document).on("click", ".product__thumb-item a", function(event) {
+                    event.preventDefault();
+                    $(".product__thumb-item a").removeClass('is-active');
+                    newflkty.select( $(this).parent().parent().index() );
+
+                });
+
+
+                var initval ='';
+                for (var i = 0; i < 1; i++) {
+
+                    setTimeout(function() {
+
+                        if(initval == 'set'){
+                            return false;
+                        }
+
+                        cleverMapper();
+
+                    }, i * 1000);
+
+                }    
+
+                function cleverMapper() {
+
+                    var optionMap = [];
+
+                    $('.swatch-selector.swatch-selected').each(function(key) {
+
+                        if($(this).val() != ''){
+
+                            optionMap[key] = $(this).val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+
+                        } else {
+
+                            optionMap[key] = $(this).text().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+                        }
+
+
+                    });
+
+
+
+                    if (optionMap.length == 0) {
+
+                       $('select[data-variant-input] option:selected').each(function(key) {
+
+                            optionMap[key] = $(this).val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+                       });
+                    }
+                  
+                    if (optionMap.length == 0) {
+
+                        $('.variant-input input:checked').each(function(key) {
+
+                            optionMap[key] = $(this).val().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+                        });
+                    }
+
+
+
+                    var variantimagesArray = [];
+                    var variantimagesArrayref = [];
+                    flkty.destroy();
+
+                    if (cleverimages[optionMap[cleveroptionindex]] != undefined) {
+
+
+                        while (variantimagesArray.length > 0) {
+
+                            variantimagesArray.pop();
+                        }
+
+                        variantimagesArrayref =  cleverimages[optionMap[cleveroptionindex]];
+                    }
+
+                    variantimagesArray = $.merge( $.merge( [], variantimagesArrayref ),cleverimages['CleverCommon']);
+                    firstimage = variantimagesArray[0].toString();
+                    $('.product-slideshow').empty();
+                    $('.product-slideshow').html(slides);
+                    if(!isMobile){
+                        $('.product__thumbs--scroller').html(thumb);
+                    }
+                   
+
+                    var newimagejson=[];
+
+                    $(imagesjson).each(function(i, obj) {
+
+                        newimg = imagesjson[i].split('?v');
+                        newimagejson.push(newimg[0]);
+                    });
+                    var counter=0;
+                    $('.product-main-slide').each(function(i, obj) {
+                        var currentimage = $(this).find('img').attr('data-photoswipe-src');
+                        currentimage = currentimage.replace("_1800x1800","");
+                        currentimage = currentimage.split('?v');
+                        newcurrentimage = currentimage[0];
+
+                        currentimageindex = $.inArray(newcurrentimage, newimagejson);
+
+                        if(currentimageindex != -1){
+                            imageid = cleverproductimages[currentimageindex]['id'];
+                            imageid = imageid.toString();
+
+                            if ($.inArray(imageid, variantimagesArray) !== -1) { 
+                                $(this).attr('data-index',counter);  
+                                counter++;
+                            } else { 
+                                $(this).remove();
+
+                            } 
+
+                        }
+                    });
+                    $('.product-slideshow').removeClass('flickity-enabled').removeClass('is-draggable');
+
+                    if(!isMobile){
+                        counter=0;
+                        $('.product__thumb-item').each(function(i, obj) {
+
+                            var currentimage = $(this).find('a').attr('href');
+                            currentimage = currentimage.replace("_1800x1800","");
+                            currentimage = currentimage.split('?v');
+                            newcurrentimage = currentimage[0];
+
+                            currentimageindex = $.inArray(newcurrentimage, newimagejson);
+
+                            if(currentimageindex != -1){
+                                imageid = cleverproductimages[currentimageindex]['id'];
+                                imageid = imageid.toString();
+
+                                if ($.inArray(imageid, variantimagesArray) !== -1) { 
+
+                                    $(this).find('a').attr('data-index',counter);  
+                                    counter++;
+
+                                } else { 
+                                    $(this).remove();
+
+                                } 
+
+                            }
+
+                        });
+                    }
+
+                    if(isMobile){
+                        optionValues = flktyOption;
+                    } else {
+                        optionValues = {adaptiveHeight: false,
+                            autoPlay: false,
+                            avoidReflow: false, // custom by Archetype
+                            childNav: null, // element. Custom by Archetype instead of asNavFor
+                            childNavScroller: null, // element
+                            childVertical: false,
+                            dragThreshold: 7,
+                            fade: false,
+                            friction: 0.8,
+                            initialIndex: 0,
+                            pageDots: false,
+                            pauseAutoPlayOnHover: false,
+                            prevNextButtons: false,
+                            rightToLeft: theme.config.rtl,
+                            selectedAttraction: 0.14,
+                            setGallerySize: true,
+                            wrapAround: true};
+                    }
+
+                    newflkty = new Flickity(document.querySelector('.product-slideshow'), optionValues);
+
+                    $(".product__thumb-item a").removeClass('is-active');
+                    $(".product__thumb-item a:first").addClass('is-active');
+                	initval ='set';
+
+            	}
+          }, 500);
+
+        }
+	});     
+
+</script>

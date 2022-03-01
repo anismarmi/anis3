@@ -1,0 +1,25 @@
+form.needsclick.klaviyo-form.klaviyo-form-version-cid_1.kl-private-reset-css-Xuajs1{
+  padding: 0px !important;
+}
+.footer__collapsible li{
+  margin-bottom: 0px;
+}
+
+/*turning the inventory alert thing yellow if it's not in stock*/
+li[data-incoming-inventory] .icon--inventory:before, li[data-incoming-inventory] .icon--inventory:after {
+  background: red !important;
+}
+
+img.ct-weather-icon{
+  height: 22px;
+  width: auto;
+}
+
+.ct-hidden{
+  display:none;
+}
+
+
+a.btn.klaviyo-bis-trigger {
+  width: 100% !important;
+}

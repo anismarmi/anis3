@@ -1,0 +1,496 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "New Spinshield",
+            "title_size": 50,
+            "subheading": "Now with Photochromic ImpactX lenses",
+            "link": "shopify:\/\/products\/spinshield",
+            "link_text": "Shop now",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ed7006",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/Photochromic_DesktopSlider_v1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Photochromic_MobileSlider_v1.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "2f440470-cc79-4679-821f-8b109ccf108d": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "NYTRON",
+            "title_size": 80,
+            "subheading": "Blurring the lines of AERO helmets",
+            "link": "shopify:\/\/products\/nytron",
+            "link_text": "SHOP NOW",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#e20453",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/Nytron_HP_Slider_2000x800_e3cc75f9-d75b-4ff9-a322-44939329d2b1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nytron_Sam_Mobile_1200x1200_aa7fd8fa-3659-4d91-ab0b-77572af96ddb.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "slideshow-1": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "New Tralyx+",
+            "title_size": 50,
+            "subheading": "Extended ear stem adjustability & re-engineered lens shape",
+            "link": "shopify:\/\/products\/tralyx-plus",
+            "link_text": "Shop now",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ed7006",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/Tralyx__HP_Slider_2000x800_e5e0e645-eeee-4ad3-a6bb-7fc905a37eaa.png",
+            "image_mobile": "shopify:\/\/shop_images\/Tralyx__Mobile_1200x1200_1.png",
+            "overlay_opacity": 0,
+            "focal_point": "top center"
+          }
+        },
+        "28cb0e96-0738-44f3-858c-a9c88966b6c5": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "60% off Sunglasses",
+            "title_size": 50,
+            "subheading": "Classic styles & new inventory",
+            "link": "shopify:\/\/collections\/featured-sale-items",
+            "link_text": "Shop now",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ed7006",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/Outlet_DesktopSlider_v1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Outlet_MobileSlider_v1.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "b806201b-1767-40aa-b87e-93f5dfdeb6ea": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "CASUALS",
+            "title_size": 80,
+            "subheading": "Sunglasses for your Active Lifestyle",
+            "link": "shopify:\/\/collections\/casual-sunglasses",
+            "link_text": "SHOP NOW",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/Rudy_CyberWeek_Slider_Desktop_v1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Rudy_CyberWeek_Slider_Mobile_v1.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow-0",
+        "2f440470-cc79-4679-821f-8b109ccf108d",
+        "slideshow-1",
+        "28cb0e96-0738-44f3-858c-a9c88966b6c5",
+        "b806201b-1767-40aa-b87e-93f5dfdeb6ea"
+      ],
+      "settings": {
+        "section_height": "750px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "NEW EYEWEAR",
+        "home_featured_products": "new-sunglasses",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "1645123934899b70a7": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Performance Eyewear",
+        "home_featured_products": "performance-sunglasses",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "1645126639991285d2": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Active Lifestyle Sunglasses",
+        "home_featured_products": "casual-sunglasses",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "164512686258e8cb17": {
+      "type": "slideshow",
+      "blocks": {
+        "164512686247c52a94-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Eyewear Technology",
+            "title_size": 40,
+            "subheading": "All our sunglasses blend wide field of vision, state-of-the-art lenses, superior fit factor and advanced materials to provide maximum eye protection, sharp vision and outstanding comfort.",
+            "link": "shopify:\/\/pages\/eyewear-tech",
+            "link_text": "See More",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/5_header_20190809095355.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "164512686247c52a94-0"
+      ],
+      "settings": {
+        "section_height": "550px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "promo-grid2": {
+      "type": "promo-grid",
+      "disabled": true,
+      "blocks": {
+        "promo2-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Eyewear technology",
+            "textarea": "All our sunglasses blend wide field of vision, state-of-the-art lenses, superior fit factor and advanced materials to provide maximum eye protection, sharp vision and outstanding comfort.",
+            "cta_text1": "SEE MORE",
+            "cta_link1": "shopify:\/\/pages\/eyewear-tech",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/5_header_20190809095355.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 600,
+            "text_size": 85,
+            "text_align": "vertical-center horizontal-left",
+            "focal_point": "80% 50%",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "promo2-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": false
+      }
+    },
+    "1645124144503158cb": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Cycling helmets",
+        "home_featured_products": "helmets",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "1645126226249913ae": {
+      "type": "slideshow",
+      "blocks": {
+        "164512622664c3557d-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Helmet Technology",
+            "title_size": 40,
+            "subheading": "Superior protection, phenomenal aerodynamic performance, extreme comfort and maximum ventilation. Our helmets feature state-of-the-art technologies to elevate your security and performance.",
+            "link": "shopify:\/\/pages\/helmet-technology-old",
+            "link_text": "See More",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-bottom horizontal-right",
+            "image": "shopify:\/\/shop_images\/5_20180903170906566.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "164512622664c3557d-0"
+      ],
+      "settings": {
+        "section_height": "550px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "promo-grid": {
+      "type": "promo-grid",
+      "disabled": true,
+      "blocks": {
+        "promo-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Helmet Technology",
+            "textarea": "Superior protection, phenomenal aerodynamic performance, extreme comfort and maximum ventilation. Our helmets feature state-of-the-art technologies to elevate your security and performance.",
+            "cta_text1": "SEE MORE",
+            "cta_link1": "shopify:\/\/pages\/helmet-technology-old",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/5_20180903170906566.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 600,
+            "text_size": 85,
+            "text_align": "vertical-center horizontal-right",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "promo-0"
+      ],
+      "settings": {
+        "full_width": true,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": false
+      }
+    },
+    "16451264534d0b8bc6": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Rudy Project Gear",
+        "home_featured_products": "apparel",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "164512595213190b49": {
+      "type": "slideshow",
+      "blocks": {
+        "164512595253534cfd-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Sustainability",
+            "title_size": 40,
+            "subheading": "Our commitment to you",
+            "link": "",
+            "link_text": "see more",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/8_20200930143700917.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "164512595253534cfd-0"
+      ],
+      "settings": {
+        "section_height": "550px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
+    "16451254060cecdd2d": {
+      "type": "promo-grid",
+      "disabled": true,
+      "blocks": {
+        "164512540636ce151d-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Sustainability",
+            "textarea": "Our commitment to you",
+            "cta_text1": "SEE MORE",
+            "cta_link1": "shopify:\/\/pages\/ride-to-zero",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/8_20200930143700917.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 600,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "164512540636ce151d-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "From the journal",
+        "blog": "news",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": false,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "blog_image_size": "wide",
+        "divider": false
+      }
+    },
+    "16451259892e354821": {
+      "type": "slideshow",
+      "blocks": {
+        "16451259894912e2b1-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Rudy Project",
+            "title_size": 40,
+            "subheading": "Family owned & operated since 1985",
+            "link": "shopify:\/\/pages\/history",
+            "link_text": "See More",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/Rudy_and_sons_4409934d-ed7c-4090-b455-641ae37c4d39.png",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "16451259894912e2b1-0"
+      ],
+      "settings": {
+        "section_height": "750px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "164512441917211c8c": {
+      "type": "promo-grid",
+      "disabled": true,
+      "blocks": {
+        "16451244199c34ee14-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Rudy Project",
+            "textarea": "Family owned and operated since 1985.",
+            "cta_text1": "SEE MORE",
+            "cta_link1": "shopify:\/\/pages\/history",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/Rudy_and_sons_4409934d-ed7c-4090-b455-641ae37c4d39.png",
+            "video_url": "",
+            "width": "100",
+            "height": 600,
+            "text_size": 85,
+            "text_align": "vertical-bottom horizontal-left",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "16451244199c34ee14-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "featured-collection",
+    "1645123934899b70a7",
+    "1645126639991285d2",
+    "164512686258e8cb17",
+    "promo-grid2",
+    "1645124144503158cb",
+    "1645126226249913ae",
+    "promo-grid",
+    "16451264534d0b8bc6",
+    "164512595213190b49",
+    "16451254060cecdd2d",
+    "blog-posts",
+    "16451259892e354821",
+    "164512441917211c8c"
+  ]
+}

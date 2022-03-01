@@ -1,0 +1,148 @@
+{%- assign swatch_file_extension = 'png' -%}
+{% assign lens_low = product.selected_or_first_available_variant.metafields.my_fields.lens_light_transmission_low %}
+{% assign lens_high = product.selected_or_first_available_variant.metafields.my_fields.lens_light_transmission_high %}
+{% assign bumpers = product.selected_or_first_available_variant.metafields.my_fields.sunglass_bumpers_name %}
+
+<div class="variant-wrapper js" data-type="button">
+  <label class="variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels %} hidden-label{% endunless %}{% if is_color and enable_frame_lens_titles %} hidden-label{% endif %}"
+    for="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ forloop.index0 }}">
+    {{ option.name }}
+    {%- if is_color -%}
+      <span class="variant__label-info">
+        &mdash;
+        <span
+          data-variant-color-label
+          data-index="{{ forloop.index0 }}"
+          data-option-index="{{ color_option_index }}">
+          {{ option.selected_value }}
+        </span>
+      </span>
+    {%- endif -%}
+  </label>
+  {% if is_color %}
+  <label class="ct-variant__label">
+    {% if enable_frame_lens_titles %}
+    <span class="variant__label">{{ color_option_heading_replacement }}</span><br>
+    <span class="variant__label-info" ct-variant-metafield="frame">Frame: {{ product.selected_or_first_available_variant.metafields.my_fields.sunglass_frame_name.value }}</span><br>
+    <span class="variant__label-info" ct-variant-metafield="lenses">Lenses: {{ product.selected_or_first_available_variant.metafields.my_fields.sunglass_lenses_name.value }}</span><br>
+    {% unless bumpers == null %}
+    <span class="variant__label-info" ct-variant-metafield="bumpers">Bumpers: {{ product.selected_or_first_available_variant.metafields.my_fields.sunglass_bumpers_name.value }}</span><br>
+    {% endunless %}
+    {% if lens_low == null and lens_high == null %}
+    {% elsif lens_high == null %}
+    <span class="variant__label-info" ct-variant-metafield="light-transmission">Light Transmission: {{ lens_low }}%  {{ 'Rudy_WeatherIcons_Rain.svg' | asset_url }}</span>
+    <span class="variant__label-info" ct-variant-metafield="light-transmission-icons">
+      {% if lens_low < 10 %}
+      <img src="{{ 'Rudy_WeatherIcons_FullSun.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Full Sun">
+      {% elsif lens_low > 10 and lens_low < 20 %}
+      <img src="{{ 'Rudy_WeatherIcons_LessSun.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Less Sun">
+      {% elsif lens_low > 20 and lens_low < 30 %}
+      <img src="{{ 'Rudy_WeatherIcons_Sun.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Sun">
+      {% elsif lens_low > 30 and lens_low < 40 %}
+      <img src="{{ 'Rudy_WeatherIcons_PartlyCloudy.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Partly Cloudy">
+      {% elsif lens_low > 40 and lens_low < 50 %}
+      <img src="{{ 'Rudy_WeatherIcons_PartlySunny.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Partly Sunny">
+      {% elsif lens_low > 50 and lens_low < 60 %}
+      <img src="{{ 'Rudy_WeatherIcons_Snow.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Snow">
+      {% elsif lens_low > 60 %}
+      <img src="{{ 'Rudy_WeatherIcons_Rain.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Rain">
+      {% endif %}
+       <span class="ct-icon-dash ct-hidden">
+         -
+      </span>
+       <img src="{{ 'Rudy_WeatherIcons_Snow.svg' | asset_url }}" class="ct-weather-icon high-range ct-hidden" ct-data-icon-name="Snow">
+     </span>
+    {% else %}
+    <span class="variant__label-info" ct-variant-metafield="light-transmission">Light Transmission: {{ lens_low }}% - {{ lens_high }}%</span>
+    <span class="variant__label-info" ct-variant-metafield="light-transmission-icons">
+      {% if lens_low < 10 %}
+      <img src="{{ 'Rudy_WeatherIcons_Snow.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Snow">
+      {% elsif lens_low > 10 and lens_low < 20 %}
+      <img src="{{ 'Rudy_WeatherIcons_FullSun.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Full Sun">
+      {% elsif lens_low > 20 and lens_low < 30 %}
+      <img src="{{ 'Rudy_WeatherIcons_Sun.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Sun">
+      {% elsif lens_low > 30 and lens_low < 40 %}
+      <img src="{{ 'Rudy_WeatherIcons_LessSun.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Less Sun">
+      {% elsif lens_low > 40 and lens_low < 50 %}
+      <img src="{{ 'Rudy_WeatherIcons_PartlyCloudy.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Partly Cloudy">
+      {% elsif lens_low > 50 and lens_low < 60 %}
+      <img src="{{ 'Rudy_WeatherIcons_PartlySunny.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Partly Sunny">
+      {% elsif lens_low > 60 %}
+      <img src="{{ 'Rudy_WeatherIcons_Rain.svg' | asset_url }}" class="ct-weather-icon low-range" ct-data-icon-name="Rain">
+      {% endif %}
+      <span class="ct-icon-dash">
+       -
+      </span>
+       {% if lens_high < 10 %}
+       <img src="{{ 'Rudy_WeatherIcons_Snow.svg' | asset_url }}" class="ct-weather-icon high-range" ct-data-icon-name="Snow">
+       {% elsif lens_high > 10 and lens_high < 20 %}
+       <img src="{{ 'Rudy_WeatherIcons_FullSun.svg' | asset_url }}" class="ct-weather-icon high-range" ct-data-icon-name="Full Sun">
+       {% elsif lens_high > 20 and lens_high < 30 %}
+       <img src="{{ 'Rudy_WeatherIcons_Sun.svg' | asset_url }}" class="ct-weather-icon high-range" ct-data-icon-name="Sun">
+       {% elsif lens_high > 30 and lens_high < 40 %}
+       <img src="{{ 'Rudy_WeatherIcons_LessSun.svg' | asset_url }}" class="ct-weather-icon high-range" ct-data-icon-name="Less Sun">
+       {% elsif lens_high > 40 and lens_high < 50 %}
+       <img src="{{ 'Rudy_WeatherIcons_PartlyCloudy.svg' | asset_url }}" class="ct-weather-icon high-range" ct-data-icon-name="Partly Cloudy">
+       {% elsif lens_high > 50 and lens_high < 60 %}
+       <img src="{{ 'Rudy_WeatherIcons_PartlySunny.svg' | asset_url }}" class="ct-weather-icon high-range" ct-data-icon-name="Partly Sunny">
+       {% elsif lens_high > 60 %}
+       <img src="{{ 'Rudy_WeatherIcons_Rain.svg' | asset_url }}" class="ct-weather-icon high-range" ct-data-icon-name="Rain">
+       {% endif %}
+     </span>
+    {% else %}
+
+    {% endif %}
+    {% endif %}
+  </label>
+  {% endif %}
+  {%- assign option_index = forloop.index -%}
+  <fieldset class="variant-input-wrap"
+    name="{{ option.name }}"
+    data-index="option{{ option_index }}"
+    data-handle="{{ option.name | handleize }}"
+    id="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ forloop.index0 }}">
+    <legend class="hide">{{ option.name }}</legend>
+    {%- for value in option.values -%}
+      {%- liquid
+        assign product_available = true
+        if product.options.size == 1
+          assign product_available = product.variants[forloop.index0].available
+        endif
+      -%}
+      <div
+        class="variant-input"
+        data-index="option{{ option_index }}"
+        data-value="{{ value | escape }}">
+        <input type="radio"
+          form="{{ form_id }}"
+          {% if option.selected_value == value %} checked="checked"{% endif %}
+          value="{{ value | escape }}"
+          data-index="option{{ option_index }}"
+          name="{{ option.name }}"
+          data-variant-input
+          class="{% unless product_available %} disabled{% endunless %}{% if is_color %} variant__input--color-swatch{% endif %}"
+          {% if is_color %} data-color-name="{{ value | escape }}"{% endif %}
+          {% if is_color %} data-color-index="{{ color_option_index }}"{% endif %}
+          id="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}">
+        {%- if is_color -%}
+          {%- liquid
+            assign color_file_name = value | handle | append: '.' | append: swatch_file_extension
+            assign color_image = color_file_name | file_img_url: '150x150' | prepend: 'https:' | split: '?' | first
+            assign color_swatch_fallback = value | split: ' ' | last | handle
+          -%}
+          <label
+            for="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+            class="variant__button-label color-swatch color-swatch--{{ value | handle }}{% unless product_available %} disabled{% endunless %}"
+            style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}"
+          >
+            {{ value | escape }}
+          </label>
+        {%- else -%}
+          <label
+            for="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+            class="variant__button-label{% unless product_available %} disabled{% endunless %}">{{ value | escape }}</label>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </fieldset>
+</div>
